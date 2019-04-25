@@ -1,0 +1,23 @@
+@font-face {
+    font-family: 'SEB SansSerif';
+    src: url('SEBSansSerif-Regular.eot');
+    src: url('SEBSansSerif-Regular.eot?#iefix') format('embedded-opentype'),
+        url('SEBSansSerif-Regular.woff2') format('woff2'),
+        url('SEBSansSerif-Regular.woff') format('woff'),
+        url('SEBSansSerif-Regular.ttf') format('truetype'),
+        url('SEBSansSerif-Regular.svg#SEBSansSerif-Regular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'SEB SansSerif';
+    src: url('SEBSansSerif-Bold.eot');
+    src: url('SEBSansSerif-Bold.eot?#iefix') format('embedded-opentype'),
+        url('SEBSansSerif-Bold.woff2') format('woff2'),
+        url('SEBSansSerif-Bold.woff') format('woff'),
+        url('SEBSansSerif-Bold.ttf') format('truetype'),
+        url('SEBSansSerif-Bold.svg#SEBSansSerif-Bold') format('svg');
+    font-weight: bold;
+    font-style: normal;
+}

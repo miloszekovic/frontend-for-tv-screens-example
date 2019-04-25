@@ -1,0 +1,368 @@
+/* html, body { 
+    overflow: hidden !important; 
+    overflow-y: hidden !important; 
+    overflow-x: hidden !important;
+    -ms-overflow-style: none !important;
+} */
+
+html {
+    font-size: 62.5%;
+}
+
+body {
+    color: $dark;
+    background: $gray;
+    @extend .seb;
+    @include font-size(2.2, 2.6);
+}
+
+a { 
+    color: $green;
+    text-decoration: none;
+
+    &:hover {
+        @extend .hov;
+    }
+
+    &:active {
+        @extend .act;
+    }
+}
+
+h1, h2, h3, h4, h5 {
+    font-weight: bold;
+}
+
+h1 {
+    @include font-size(2.8);
+    font-weight: normal;
+}
+
+h2 {
+    @include font-size(3.8, 4.5);
+    margin-left: -1px;
+}
+
+h3 {
+    @include font-size(2.2, 2.6);
+    padding-bottom: 16px;
+}
+
+h4 {
+    @include font-size(5.6);
+    padding: 75px 0 53px 51px;
+}
+
+p {
+    padding-top: 20px;
+}
+
+/* basic layout */
+#wrapper {
+    margin: $centering;
+    width: $fullHD;
+    height: $fullHDH;
+    overflow: hidden;
+    background: $light;
+}
+
+/* header */
+header {
+    height: 116px;
+    background: $light;
+
+    .logo, h1, article, time, .data ul li {
+        @extend .floating;
+    }
+
+    .logo {
+        width: 116px;
+    }
+
+    h1 {
+        line-height: 108px;
+        margin: 0 70px 0 48px;
+    }
+
+    article {
+        overflow: hidden !important;
+        position: relative;
+        width: 350px;
+
+        .sep {
+            display: block;
+            height: 10px;
+            background: $light;
+            @include box-shadow(0 0 14px 14px $light);
+            position: relative;
+            z-index: 44;
+        }
+    }
+
+    .data {
+        position: relative;
+        z-index: 33;
+        display: block;
+        height: 96px;
+
+        ul {
+            padding-top: 20px;
+            display: block;
+            height: 48px;
+            
+            li {
+                width: 100px;
+                @include font-size(1.7, 2.8);
+
+                &:nth-child(2) {
+                    width: 85px;
+                }
+
+                &:nth-child(3) {
+                    width: 70px;
+                }
+                
+                &:last-child {
+                    width: 65px;
+                    text-align: right;
+                }
+            }
+        }
+    }
+
+    time {
+        @include font-size(5.7);
+        float: right;
+        line-height: 113px;
+        margin-right: 51px;
+        font-weight: bold;
+    }
+}
+
+header article .data div div div:nth-child(2n) ul {
+    padding-top: 0 !important;
+}
+
+/* content */
+.event-block {
+    
+    article, img {
+        width: $full / 2;
+        @extend .floating;
+    }
+
+    article {
+        padding: 170px 55px 0;
+    }
+
+    .video-wrapper {
+        position: relative;
+        padding-bottom: 56.25%;
+        height: 0;
+
+        iframe, object, embed, video {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100% !important;
+            height: 100% !important;
+        }
+    }
+}
+
+.event-wrapper .event-block:nth-child(1n) {
+
+    .showforodd {
+        display: inline-block;
+    }
+
+    .showforeven {
+        display: none;
+    }
+}
+
+.event-wrapper .event-block:nth-child(2n) {
+    
+    .showforodd {
+        display: none;
+    }
+
+    .showforeven {
+        display: inline-block;
+    }
+}
+
+/* footer */
+footer {
+    position: relative;
+    overflow: hidden;
+
+    .part {
+        background: $light;
+        @include box-shadow(0 0 18px 18px $light);
+        width: 30px;
+        height: 580px;
+        position: absolute;
+        z-index: 66;
+        top: 0;
+
+        &.left {
+            left: 0;
+        }
+
+        &.right {
+            right: 0;
+        }
+    }
+}
+
+/* slider */
+.slick-slider {
+    position: relative;
+    z-index: 55;
+    display: block;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    -webkit-touch-callout: none;
+    -khtml-user-select: none;
+    -ms-touch-action: pan-y;
+    touch-action: pan-y;
+    -webkit-tap-highlight-color: transparent;
+}
+.slick-list {
+    position: relative;
+    display: block;
+    overflow: hidden;
+    margin: 0;
+    padding: 0;
+
+    &:focus {
+        outline: none;
+    }
+
+    &.dragging {
+        cursor: pointer;
+        cursor: hand;
+    }
+}
+.slick-slider .slick-track,
+.slick-slider .slick-list {
+    -webkit-transform: translate3d(0, 0, 0);
+    -moz-transform: translate3d(0, 0, 0);
+    -ms-transform: translate3d(0, 0, 0);
+    -o-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+}
+.slick-track {
+    position: relative;
+    top: 0;
+    left: 0;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+.slick-track:before,
+.slick-track:after {
+    display: table;
+    content: '';
+}
+.slick-track:after {
+    clear: both;
+}
+.slick-loading .slick-track {
+    visibility: hidden;
+}
+.slick-slide {
+    display: none;
+    float: left;
+}
+.horisontal .slick-slide {
+    padding: 0 55px;
+}
+[dir='rtl'] .slick-slide {
+    float: left;
+}
+.slick-initialized .slick-slide {
+    display: block;
+}
+.slick-arrow {
+    display: none !important;
+}
+
+/******************************************************************
+Screens 640 x 1080
+******************************************************************/
+body.big-screens {
+
+    @include font-size(1.6, 2);
+
+    h2 {
+        @include font-size(2.3, 2.8);
+    }
+    
+    h3 {
+        @include font-size(1.6, 2);
+        padding-bottom: 10px;
+    }
+
+    h4 {
+        @include font-size(3);
+        padding: 17px 0 17px 28px;
+    }
+
+    p {
+        padding-top: 12px;
+    }
+
+    #wrapper {
+        width: $smallDH;
+        height: $fullHD;
+    }
+
+    header {
+        height: 80px;
+
+        .logo {
+            width: 80px;
+        }
+
+        h1 {
+            margin: 0 20px 0 23px;
+            @include font-size(2.3);
+            line-height: 74px;
+        }
+
+        article {
+            display: none;
+        }
+
+        time {
+            @include font-size(4.2);
+            line-height: 78px;
+            margin-right: 26px;
+        }
+    }
+
+    .event-block {
+    
+        article {
+            padding: 55px 30px 0;
+        }
+    }
+
+    footer {
+    
+        .part {
+            width: 15px;
+            height: 270px;
+            @include box-shadow(0 0 12px 12px $light);
+        }
+
+        .horisontal .slick-slide {
+            padding: 0 30px;
+        }
+    }
+
+}

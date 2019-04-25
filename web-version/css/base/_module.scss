@@ -1,0 +1,72 @@
+@import 'reset';
+@import url('fonts/font.css');
+
+/* sass variables */
+$dark: #000;
+$light: #fff;
+$green: #60cd18;
+$gray: #4e4e4e;
+$page: 980px;
+$full: 100%;
+$centering: 0 auto;
+
+/* sass mixing */
+@mixin font-size($size:1.6, $line: $size * 1.5){
+    font-size:   ($size * 10) + px;
+    line-height: ($line * 10) + px;
+    font-size:   $size + rem;
+    line-height: $line + rem;
+}
+
+@mixin box-shadow($size) {
+    -webkit-box-shadow: $size;
+    -moz-box-shadow: $size;
+    box-shadow: $size;
+}
+
+.floating { 
+    display: inline-block;
+    vertical-align: top;
+}
+
+.centered-element {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    -moz-transform: translate(-50%,-50%);
+    -webkit-transform: translate(-50%,-50%);
+}
+
+.seb {
+    font-family: 'SEB SansSerif', Arial, sans-serif;
+}
+
+.img {
+    width: $full;
+    height: auto;
+}
+
+.hov { 
+    opacity:.80; 
+    -moz-opacity:.80; 
+    filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=80); 
+    -MS-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=80)";
+    transition: all 0.2s ease;
+    -webkit-transition: all 0.2s ease;
+    -moz-transition: all 0.2s ease;
+    -ms-transition: all 0.2s ease;
+    -o-transition: all 0.2s ease;
+}
+
+.act { 
+    opacity:.60; 
+    -moz-opacity:.60; 
+    filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=60); 
+    -MS-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=60)";
+    transition: all 0.2s ease;
+    -webkit-transition: all 0.2s ease;
+    -moz-transition: all 0.2s ease;
+    -ms-transition: all 0.2s ease;
+    -o-transition: all 0.2s ease;
+}
