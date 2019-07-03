@@ -1,6 +1,6 @@
 # frontend-for-tv-screens-example
 
-Example of coding for big TV screens - SEB PROJECT
+Example of coding for big TV screens - SEB BANK, Sweden
 
 <img src="screen.png" width="100%" />
 
